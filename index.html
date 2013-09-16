@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Digging, Debugging</title>
+  <meta name="description" content="Presentation for jQuery Conference Austin 2013 on debugging web-based applications">
+  <meta name="author" content="Brian Arnold">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Styles for Reveal -->
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="css/brianarn.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/docco.css">
+
+  <!-- I guess we can be nice -->
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Digging, Debugging</h1>
+          <h2>&lt;witty subtitle here&gt;</h2>
+          <!-- inline style zomg -->
+          <p style="padding-top: 3em; font-size: 0.7em">Hashtags: #digdebug #jqcon</p>
+        </section>
+        <section>
+          <h3>Brian Arnold</h3>
+          <p>
+            <a href="http://twitter.com/brianarn">@brianarn</a> | <a href="http://www.randomthink.net">randomthink.net</a>
+          </p>
+          <ul>
+            <li>Senior Software Engineer @ <a href="http://www.bazaarvoice.com">Bazaarvoice</a></li>
+            <li>Previously a Lead Support &amp; Senior Software Engineer at <a href="http://www.sitepen.com">SitePen</a></li>
+            <li><a href="http://dojotoolkit.org">Dojo</a> core committer</li>
+            <li>Rock Band guitar expert</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Outline</h2>
+          <ul>
+            <li>Non-technical tips</li>
+            <li>Understand the tools</li>
+            <li>Techniques</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Non-technical Tips</h1>
+        </section>
+        <section>
+          <h2>Be open to learning</h2>
+          <p>We are professional students</p>
+        </section>
+        <section>
+          <h2>Learn JavaScript</h2>
+          <h3>No, really, learn the core</h3>
+          <p>Read the spec, read JS: TDG thoroughly</p>
+          <img src="images/jstgptdg.jpg" alt="lol">
+        </section>
+        <section>
+          <h2>Rubber Duck</h2>
+          <ul>
+            <li>Colleagues</li>
+            <li>Friends at other shops</li>
+            <li>An actual rubber duck</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Understand the tools</h1>
+        </section>
+        <section>
+          <h2>Command Line API</h2>
+          <p>Originally pioneered in Firebug, now fairly ubiquitous</p>
+          <p>Feature support varies, learn your environment of choice</p>
+        </section>
+        <section>
+          <h2>Moving between Elements and Console</h2>
+          <ul>
+            <li><code>$0</code></li>
+            <li><code>$_</code></li>
+            <li><code>inspect</code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Detailed viewing</h2>
+          <ul>
+            <li><code>console.*</code></li>
+            <li><code>dir</code></li>
+            <li><code>copy</code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>STOP THE PRESSES</h2>
+          <ul>
+            <li><code>debugger;</code></li>
+            <li>Breakpoints</li>
+            <li>Watch things</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Other types of breaks</h2>
+          <ul>
+            <li>DOM Breakpoints</li>
+            <li>XHR Breakpoints</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Sources</h2>
+          <ul>
+            <li>Fuzzy finder opening</li>
+            <li>Pretty printing</li>
+            <li>Breaking on some/all errors</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Profiling</h2>
+          <ul>
+            <li>Memory</li>
+            <li>Runtime</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Techniques</h1>
+          <h2>(Here there be hacks)</h2>
+        </section>
+        <section>
+          <h2>Private Mode</h2>
+          <p>Not just for hiding things</p>
+        </section>
+        <section>
+          <h2>Use a style guide, damnit</h2>
+          <p>Inconsistently written code can be awful</p>
+          <p>Look into things like <a href="https://github.com/rwaldron/idiomatic.js/">Idiomatic</a> for a starting point, and <a href="http://editorconfig.org">EditorConfig</a> to help enforce it</p>
+          <blockquote>
+            <p>You don't write code for yourself, you write it for the moron who has to maintain it in a year.</p>
+            <p>More often than not, you are that moron.</p>
+          </blockquote>
+        </section>
+        <section>
+          <h2>Breakpoint Actions</h2>
+          <p>Use and abuse of conditional breakpoints for fun and profit*</p>
+          <p>* There may not be profit</p>
+        </section>
+        <section>
+          <h2>Reading the stack</h2>
+          <p>Which code is mine? Look for anonymous functions.</p>
+          <p>You can also name function expressions (can leak in IE6)</p>
+        </section>
+        <section>
+          <h2>Digging through the stack</h2>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="http://discover-devtools.codeschool.com">Discover DevTools</a></li>
+            <li><a href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">Command Line API (Chrome)</a></li>
+            <li><a href="http://getfirebug.com/wiki/index.php/Command_Line_API">Command Line API (Firebug)</a></li>
+            <li><a href="https://developers.google.com/chrome-developer-tools/docs/console-api">Console API (Chrome)</a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+    <footer>
+      <p>Digging, Debugging: Brian Arnold @ jQuery Conference Austin 2013</p>
+    </footer>
+  </div>
+
+  <!-- Scripts yay -->
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: 'sky',
+      transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+      transitionSpeed: 'fast', // default/fast/slow
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        // { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        // { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+        // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+</body>
+</html>
